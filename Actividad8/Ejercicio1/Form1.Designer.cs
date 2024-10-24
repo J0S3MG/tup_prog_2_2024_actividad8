@@ -53,6 +53,7 @@
             this.btnVerCuentas.TabIndex = 1;
             this.btnVerCuentas.Text = "1- Ver Cuentas";
             this.btnVerCuentas.UseVisualStyleBackColor = true;
+            this.btnVerCuentas.Click += new System.EventHandler(this.btnVerCuentas_Click);
             // 
             // btnImportar
             // 
@@ -62,6 +63,7 @@
             this.btnImportar.TabIndex = 2;
             this.btnImportar.Text = "2- Importar Cuentas";
             this.btnImportar.UseVisualStyleBackColor = true;
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
             // btnExportar
             // 
@@ -71,6 +73,7 @@
             this.btnExportar.TabIndex = 3;
             this.btnExportar.Text = "3- Exportar Cuentas";
             this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // btnBackUp
             // 
@@ -103,6 +106,8 @@
             this.Controls.Add(this.tbxVer);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Ejercicio1.Models
 {
+    [Serializable]
     public class Banco
     {
         List<Persona> clientes = new List<Persona>();
@@ -27,7 +28,7 @@ namespace Ejercicio1.Models
             get
             {
                 Cuenta c = null;
-                if (idx > 0 && idx < CantCuent)
+                if (idx >= 0 && idx < CantCuent)
                 {
                     c = cuentas[idx];
                 }
@@ -57,18 +58,26 @@ namespace Ejercicio1.Models
         public Persona VerClienteDNI(int dni)
         {
             Persona busq = new Persona(dni, null);
+            Persona enc = null;
             clientes.Sort();
             int idx = clientes.BinarySearch(busq);
-            Persona encontrada = clientes[idx];
-            return encontrada;
+            if (idx > 0 && idx < CantClien)
+            {
+                enc = clientes[idx];
+            }
+            return enc;
         }
         public Cuenta VerCuentaNro(int numero)
         {
             Cuenta busq = new Cuenta(numero, null);
+            Cuenta enc = null;
             cuentas.Sort();
             int idx = cuentas.BinarySearch(busq);
-            Cuenta encontrada = cuentas[idx];
-            return encontrada;
+            if (idx > 0 && idx < CantCuent)
+            {
+                enc = cuentas[idx];
+            }  
+            return enc;
         }
         public bool RestaurarCuenta(int num, double saldo, DateTime fecha, Persona titular)
         {

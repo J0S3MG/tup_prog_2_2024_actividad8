@@ -2,6 +2,7 @@
 
 namespace Ejercicio1.Models
 {
+    [Serializable]
     public class Cuenta : IComparable
     {
         public Persona Titular { get; set; }
@@ -29,6 +30,11 @@ namespace Ejercicio1.Models
             if (cuenta != null)
                 return Numero.CompareTo(cuenta.Numero);
             return 1;
+        }
+        public override string ToString()
+        {
+            string dat = $@"{Numero}   |{Titular.Nombre}| {Saldo}"+"\r\n";
+            return dat;
         }
     }
 }
